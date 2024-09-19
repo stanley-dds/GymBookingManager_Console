@@ -6,22 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 #if DEBUG
-[assembly: InternalsVisibleTo("Tests")]
+[assembly: InternalsVisibleTo("GymBookingManager.Tests")]
 #endif
 namespace Gym_Booking_Manager
 {
     internal abstract class User
     {
-        //uniqueID?
-        public string name { get; set; } // Here the "field" is private, but properties (access of the field) public here - this constellation being purely declarative without change in functionality
-        public string phone { get; set; }
-        public string email { get; set; }
+        public string Name { get; set; } 
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
 
-        protected User(string name)
+
+        public User(string name, string email, string phoneNumber)
         {
-            this.name = name;
-            this.phone = "0";
-            this.email = "test@test";
+            Name = name;
+            Email = email;
+            PhoneNumber = phoneNumber;
         }
     }
 }
